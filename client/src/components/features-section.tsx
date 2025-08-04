@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Target, Network, Plug, Compass, Eye, TrendingUp } from "lucide-react";
 import arrowsIcon from "@assets/Scribbles Arrows_1754333104123.png";
 import starIcon from "@assets/Doodle Star_1754333729253.png";
+import integrationIcon from "@assets/Doodle Integration_1754333898680.png";
 
 const features = [
   {
@@ -60,6 +61,7 @@ export default function FeaturesSection() {
             const Icon = feature.icon;
             const isMultiModelFeature = feature.title === "Multi-Model AI Integration";
             const isStrategicAlignmentFeature = feature.title === "Strategic AI Alignment";
+            const isEnterpriseIntegrationFeature = feature.title === "Enterprise Platform Integration";
             
             return (
               <motion.div
@@ -83,6 +85,13 @@ export default function FeaturesSection() {
                     <img 
                       src={arrowsIcon} 
                       alt="Multi-Model AI Integration" 
+                      className="w-12 h-12 mb-4 brightness-0 invert"
+                      data-testid={`feature-icon-${index}`}
+                    />
+                  ) : isEnterpriseIntegrationFeature ? (
+                    <img 
+                      src={integrationIcon} 
+                      alt="Enterprise Platform Integration" 
                       className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
