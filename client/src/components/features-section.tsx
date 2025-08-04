@@ -5,7 +5,7 @@ import starIcon from "@assets/Doodle Star_1754333729253.png";
 import integrationIcon from "@assets/Doodle Integration_1754333898680.png";
 import contextIcon from "@assets/Context Doodle_1754334074317.png";
 import eyeIcon from "@assets/Doodle Eye_1754334335671.png";
-import blueprintIcon from "@assets/Doodle Blueprint_1754335075581.png";
+import blueprintIcon from "@assets/Doodle Blueprint_1754335357584.png";
 
 const features = [
   {
@@ -105,7 +105,7 @@ export default function FeaturesSection() {
                     <img 
                       src={blueprintIcon} 
                       alt="Agent Blueprints" 
-                      className="w-12 h-12 mb-4 brightness-0 invert scale-125"
+                      className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
                   ) : isAgentVisualizationFeature ? (
