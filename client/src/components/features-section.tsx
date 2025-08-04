@@ -5,6 +5,7 @@ import starIcon from "@assets/Doodle Star_1754333729253.png";
 import integrationIcon from "@assets/Doodle Integration_1754333898680.png";
 import contextIcon from "@assets/Context Doodle_1754334074317.png";
 import eyeIcon from "@assets/Doodle Eye_1754334335671.png";
+import blueprintIcon from "@assets/Doodle Blueprint_1754334483190.png";
 
 const features = [
   {
@@ -66,6 +67,7 @@ export default function FeaturesSection() {
             const isEnterpriseIntegrationFeature = feature.title === "Enterprise Platform Integration";
             const isContextDrivenAdviceFeature = feature.title === "Context Driven Advice";
             const isAgentVisualizationFeature = feature.title === "Agent Visualization";
+            const isAgentBlueprintsFeature = feature.title === "Agent Blueprints";
             
             return (
               <motion.div
@@ -99,10 +101,10 @@ export default function FeaturesSection() {
                       className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
-                  ) : isContextDrivenAdviceFeature ? (
+                  ) : isAgentBlueprintsFeature ? (
                     <img 
-                      src={contextIcon} 
-                      alt="Context Driven Advice" 
+                      src={blueprintIcon} 
+                      alt="Agent Blueprints" 
                       className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
@@ -110,6 +112,13 @@ export default function FeaturesSection() {
                     <img 
                       src={eyeIcon} 
                       alt="Agent Visualization" 
+                      className="w-12 h-12 mb-4 brightness-0 invert"
+                      data-testid={`feature-icon-${index}`}
+                    />
+                  ) : isContextDrivenAdviceFeature ? (
+                    <img 
+                      src={contextIcon} 
+                      alt="Context Driven Advice" 
                       className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
