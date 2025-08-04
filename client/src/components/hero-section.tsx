@@ -20,8 +20,8 @@ export default function HeroSection() {
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
             data-testid="hero-title"
           >
-            Link Strategy to{" "}
-            <span className="gradient-text">AI Opportunities</span>
+            From AI Strategy to{" "}
+            <span className="gradient-text">Agentic Blueprints</span>
           </motion.h1>
           
           <motion.p
