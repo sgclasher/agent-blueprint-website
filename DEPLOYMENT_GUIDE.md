@@ -15,10 +15,24 @@ Since the `.replit` file cannot be edited programmatically, you need to manually
    ```
    npm run dev
    ```
-   to:
+   to one of these production-ready options:
+
+   **OPTION 1 (Recommended):**
    ```
    ./build.sh && npm start
    ```
+
+   **OPTION 2 (Alternative with explicit production environment):**
+   ```
+   ./build.sh && ./start-production.sh
+   ```
+
+   **OPTION 3 (Direct npm commands):**
+   ```
+   npm run build && npm start
+   ```
+
+4. Set NODE_ENV environment variable to "production" in deployment settings
 
 ### 2. Production Build Process
 
