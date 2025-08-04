@@ -19,9 +19,9 @@ const features = [
     description: "Integrates with multiple LLMs to provide comprehensive AI powered analysis and recommendations."
   },
   {
-    icon: Plug,
-    title: "Enterprise Platform Integration",
-    description: "Seamlessly connects with ServiceNow, Salesforce, N8N, Pega, and other popular agentic platforms."
+    icon: TrendingUp,
+    title: "Context Driven Advice",
+    description: "House and analyze key company data including strategic initiatives, business problems, and technology landscape for tailored, contextual advice."
   },
   {
     icon: Compass,
@@ -34,9 +34,9 @@ const features = [
     description: "Visualize how AI agents are constructed, their triggers, tools, and outputs and how they interact."
   },
   {
-    icon: TrendingUp,
-    title: "Context Driven Advice",
-    description: "House and analyze key company data including strategic initiatives, business problems, and technology landscape for tailored, contextual advice."
+    icon: Plug,
+    title: "Enterprise Platform Integration",
+    description: "Seamlessly connects with ServiceNow, Salesforce, N8N, Pega, and other popular agentic platforms."
   }
 ];
 
