@@ -114,7 +114,7 @@ export default function ContactSection() {
                           <Input
                             {...field}
                             type="email"
-                            placeholder="info@agentblueprint.ai"
+                            placeholder="name@email.com"
                             className="bg-gray-900 border-gray-700 focus:ring-primary focus:border-primary text-white placeholder-gray-400"
                             data-testid="input-email"
                           />
