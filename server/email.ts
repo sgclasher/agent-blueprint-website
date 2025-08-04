@@ -1,26 +1,35 @@
 import sgMail from '@sendgrid/mail';
 
-if (!process.env.SENDGRID_API_KEY) {
-  throw new Error("SENDGRID_API_KEY environment variable must be set");
-}
+let sendGridConfigured = false;
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+function ensureSendGridConfigured(): boolean {
+  if (!sendGridConfigured && process.env.SENDGRID_API_KEY) {
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sendGridConfigured = true;
+  }
+  return sendGridConfigured;
+}
 
 interface ContactEmailData {
   name: string;
   email: string;
-  company: string;
+  company: string | null;
   message: string;
 }
 
 export async function sendContactEmail(data: ContactEmailData): Promise<boolean> {
   try {
+    if (!ensureSendGridConfigured()) {
+      console.warn('SendGrid not configured - SENDGRID_API_KEY environment variable is required for email functionality');
+      return false;
+    }
+
     const emailContent = `
 New Contact Form Submission from Agent Blueprint Website
 
 Name: ${data.name}
 Email: ${data.email}
-Company: ${data.company}
+Company: ${data.company || 'Not provided'}
 
 Message:
 ${data.message}
