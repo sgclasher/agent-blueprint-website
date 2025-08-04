@@ -4,6 +4,7 @@ import arrowsIcon from "@assets/Scribbles Arrows_1754333104123.png";
 import starIcon from "@assets/Doodle Star_1754333729253.png";
 import integrationIcon from "@assets/Doodle Integration_1754333898680.png";
 import contextIcon from "@assets/Context Doodle_1754334074317.png";
+import eyeIcon from "@assets/Doodle Eye_1754334335671.png";
 
 const features = [
   {
@@ -64,6 +65,7 @@ export default function FeaturesSection() {
             const isStrategicAlignmentFeature = feature.title === "Strategic AI Alignment";
             const isEnterpriseIntegrationFeature = feature.title === "Enterprise Platform Integration";
             const isContextDrivenAdviceFeature = feature.title === "Context Driven Advice";
+            const isAgentVisualizationFeature = feature.title === "Agent Visualization";
             
             return (
               <motion.div
@@ -101,6 +103,13 @@ export default function FeaturesSection() {
                     <img 
                       src={contextIcon} 
                       alt="Context Driven Advice" 
+                      className="w-12 h-12 mb-4 brightness-0 invert"
+                      data-testid={`feature-icon-${index}`}
+                    />
+                  ) : isAgentVisualizationFeature ? (
+                    <img 
+                      src={eyeIcon} 
+                      alt="Agent Visualization" 
                       className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
