@@ -3,6 +3,7 @@ import { Target, Network, Plug, Compass, Eye, TrendingUp } from "lucide-react";
 import arrowsIcon from "@assets/Scribbles Arrows_1754333104123.png";
 import starIcon from "@assets/Doodle Star_1754333729253.png";
 import integrationIcon from "@assets/Doodle Integration_1754333898680.png";
+import contextIcon from "@assets/Context Doodle_1754334074317.png";
 
 const features = [
   {
@@ -62,6 +63,7 @@ export default function FeaturesSection() {
             const isMultiModelFeature = feature.title === "Multi-Model AI Integration";
             const isStrategicAlignmentFeature = feature.title === "Strategic AI Alignment";
             const isEnterpriseIntegrationFeature = feature.title === "Enterprise Platform Integration";
+            const isContextDrivenAdviceFeature = feature.title === "Context Driven Advice";
             
             return (
               <motion.div
@@ -92,6 +94,13 @@ export default function FeaturesSection() {
                     <img 
                       src={integrationIcon} 
                       alt="Enterprise Platform Integration" 
+                      className="w-12 h-12 mb-4 brightness-0 invert"
+                      data-testid={`feature-icon-${index}`}
+                    />
+                  ) : isContextDrivenAdviceFeature ? (
+                    <img 
+                      src={contextIcon} 
+                      alt="Context Driven Advice" 
                       className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
