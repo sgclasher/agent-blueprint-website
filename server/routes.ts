@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendContactEmail } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -11,14 +12,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertContactSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
       
-      // In a real application, you would send an email here using nodemailer
-      // For now, we'll just log the contact submission
-      console.log("New contact submission:", {
+      // Send email notification to amy@agentblueprint.ai and chris@agentblueprint.ai
+      const emailSent = await sendContactEmail({
         name: contact.name,
         email: contact.email,
         company: contact.company,
-        message: contact.message.substring(0, 100) + "...",
+        message: contact.message
       });
+
+      if (emailSent) {
+        console.log("Contact form submitted and email sent:", {
+          name: contact.name,
+          email: contact.email,
+          company: contact.company,
+          message: contact.message.substring(0, 100) + "...",
+        });
+      } else {
+        console.warn("Contact form submitted but email failed to send:", {
+          name: contact.name,
+          email: contact.email,
+        });
+      }
 
       res.json({ 
         success: true, 
