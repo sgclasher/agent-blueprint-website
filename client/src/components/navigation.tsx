@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/Agent Blueprint Symbol (White)_1754332698082.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
             <img 
-              src="/attached_assets/Agent Blueprint Symbol (White)_1754332698082.png" 
+              src={logoImage} 
               alt="Agent Blueprint Logo" 
               className="h-8 w-8"
               data-testid="nav-logo-image"
