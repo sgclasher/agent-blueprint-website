@@ -1,0 +1,10 @@
+What is Agent Blueprint:
+
+Agent blueprint is a custom built tool for companies to link their corporate strategic initiatives and key business problems to AI opportunities
+Agent blueprint is currently being built by NowGentic, a boutique AI advisory firm, who want to seek VC funding to further build out agent blueprint
+Agent blueprint houses some key company data including strategic initiatives, business problems, and core enterprise systems they currently use today
+Agent blueprint is a multi model (integrates with many LLMs) AI powered solution that helps a company understand what agentic AI solutions (AI Agents) they should build and why, and links those agents directly to business problems and strategies for end to end understanding of how AI agents could deliver value
+Agent blueprint also provides integration to many popular enterprise platforms (e.g. ServiceNow, Salesforce, N8N, Pega, etc) where AI agents can be built and run from
+The current conceptual proof of concept version of agent blueprint has been modeled out using ServiceNow as the agentic platform, but the intent is for agent blueprint to be able to handle many agentic platform and be technology agnostic
+Agent blueprint can design AI agent based on the business problem and associated AI opportunity, and identify the underlying technical platform the agent should be built on with integration to that platform
+Agent blueprint provides an agent visualization layer that help's companies visualize how AI agents are constructed on the underlying platform, what their triggers are, what tools the agents use, and what their output is. 
