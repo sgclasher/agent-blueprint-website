@@ -105,7 +105,7 @@ export default function FeaturesSection() {
                     <img 
                       src={blueprintIcon} 
                       alt="Agent Blueprints" 
-                      className="w-13 h-13 mb-4 brightness-0 invert"
+                      className="w-12 h-12 mb-4 brightness-0 invert"
                       data-testid={`feature-icon-${index}`}
                     />
                   ) : isAgentVisualizationFeature ? (
