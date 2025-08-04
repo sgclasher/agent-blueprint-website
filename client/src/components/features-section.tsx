@@ -1,21 +1,22 @@
 import { motion } from "framer-motion";
 import { Target, Network, Plug, Compass, Eye, TrendingUp } from "lucide-react";
+import arrowsIcon from "@assets/Scribbles Arrows_1754333104123.png";
 
 const features = [
   {
     icon: Target,
     title: "Strategic AI Alignment",
-    description: "Link corporate strategic initiatives and business problems directly to AI opportunities with end-to-end understanding of value delivery."
+    description: "Connect your corporate strategic initiatives and business problems directly to AI agent opportunities."
   },
   {
     icon: Network,
     title: "Multi-Model AI Integration",
-    description: "Technology-agnostic platform that integrates with multiple LLMs and AI models to provide the best solutions for your specific needs."
+    description: "Integrates with multiple LLMs to provide comprehensive AI powered analysis and recommendations."
   },
   {
     icon: Plug,
     title: "Enterprise Platform Integration",
-    description: "Connect to popular enterprise platforms like ServiceNow, Salesforce, N8N, and Pega where AI agents can be built and deployed."
+    description: "Seamlessly connects with ServiceNow, Salesforce, N8N, Pega, and other popular agentic platforms."
   },
   {
     icon: Compass,
@@ -56,6 +57,8 @@ export default function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
+            const isMultiModelFeature = feature.title === "Multi-Model AI Integration";
+            
             return (
               <motion.div
                 key={feature.title}
@@ -67,7 +70,16 @@ export default function FeaturesSection() {
                 data-testid={`feature-card-${index}`}
               >
                 <div className="mb-6">
-                  <Icon className="w-12 h-12 text-primary mb-4" data-testid={`feature-icon-${index}`} />
+                  {isMultiModelFeature ? (
+                    <img 
+                      src={arrowsIcon} 
+                      alt="Multi-Model AI Integration" 
+                      className="w-12 h-12 mb-4 brightness-0 invert"
+                      data-testid={`feature-icon-${index}`}
+                    />
+                  ) : (
+                    <Icon className="w-12 h-12 text-primary mb-4" data-testid={`feature-icon-${index}`} />
+                  )}
                   <h3 className="text-2xl font-semibold mb-4" data-testid={`feature-title-${index}`}>
                     {feature.title}
                   </h3>

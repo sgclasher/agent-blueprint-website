@@ -17,7 +17,7 @@ export default function Footer() {
               Agent Blueprint
             </h3>
             <p className="text-gray-400 mt-2" data-testid="footer-copyright">
-              © 2024 NowGentic. All rights reserved.
+              © 2025 Agent Blueprint. All rights reserved.
             </p>
           </div>
           

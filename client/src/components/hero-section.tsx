@@ -31,7 +31,7 @@ export default function HeroSection() {
             className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto"
             data-testid="hero-description"
           >
-            Agent Blueprint connects your corporate strategic initiatives and key business problems to actionable AI opportunities through our multi-model AI-powered platform.
+            Agent Blueprint connects your corporate strategic initiatives and key business problems to intelligent AI opportunities, helping you understand what agents to build and why.
           </motion.p>
           
           <motion.div
