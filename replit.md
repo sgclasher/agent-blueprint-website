@@ -73,3 +73,30 @@ Preferred communication style: Simple, everyday language.
 - **Enterprise Platforms**: Designed to integrate with ServiceNow, Salesforce, N8N, Pega (integration endpoints to be implemented)
 
 The architecture supports the platform's goal of connecting strategic business initiatives to AI opportunities while maintaining flexibility for future enterprise platform integrations and multi-model AI capabilities.
+
+## Production Deployment Configuration
+
+### Deployment Scripts Created
+- **build.sh**: Complete production build script that builds frontend with Vite, backend with ESBuild, and copies static assets to correct server location
+- **test-production.sh**: Automated testing script to verify production build integrity and server functionality
+- **DEPLOYMENT_GUIDE.md**: Comprehensive guide for manual deployment configuration updates
+
+### Production Build Process
+The production build process handles:
+1. Frontend optimization with Vite (minified JS/CSS, asset bundling)
+2. Backend bundling with ESBuild for Node.js deployment
+3. Static asset placement in `server/public/` for proper serving
+4. Environment configuration for production mode
+
+### Manual Configuration Required
+Since `.replit` file editing is restricted, deployment configuration must be updated manually in Replit's deployment interface:
+- Change run command from `npm run dev` to `./build.sh && npm start`
+- Ensures production environment variables are set (NODE_ENV=production)
+
+### Deployment Status
+- ✅ Production build scripts functional and tested
+- ✅ Static asset serving configured correctly
+- ✅ Server bundle creation and execution verified
+- ⏳ Manual deployment configuration update pending (user action required)
+
+Last updated: August 4, 2025
