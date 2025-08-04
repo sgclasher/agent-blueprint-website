@@ -30,7 +30,13 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/attached_assets/Agent Blueprint Symbol (White)_1754332698082.png" 
+              alt="Agent Blueprint Logo" 
+              className="h-8 w-8"
+              data-testid="nav-logo-image"
+            />
             <h1 className="text-xl font-bold text-white" data-testid="nav-logo">
               Agent Blueprint
             </h1>
