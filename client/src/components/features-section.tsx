@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, Network, Plug, Compass, Eye, TrendingUp } from "lucide-react";
 import arrowsIcon from "@assets/Scribbles Arrows_1754333104123.png";
+import starIcon from "@assets/Doodle Star_1754333729253.png";
 
 const features = [
   {
@@ -20,18 +21,18 @@ const features = [
   },
   {
     icon: Compass,
-    title: "Intelligent Agent Design",
-    description: "Design AI agents based on business problems and identify the optimal technical platform for implementation."
+    title: "Agent Blueprints",
+    description: "Automatically architect AI agents that solve your most critical business problems and provide measurable value."
   },
   {
     icon: Eye,
     title: "Agent Visualization",
-    description: "Visualize how AI agents are constructed, their triggers, tools, and outputs across your enterprise ecosystem."
+    description: "Visualize how AI agents are constructed, their triggers, tools, and outputs and how they interact."
   },
   {
     icon: TrendingUp,
-    title: "Strategic Intelligence",
-    description: "House and analyze key company data including strategic initiatives, business problems, and current enterprise systems."
+    title: "Context Driven Advice",
+    description: "House and analyze key company data including strategic initiatives, business problems, and technology landscape for tailored, contextual advice."
   }
 ];
 
@@ -58,6 +59,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const isMultiModelFeature = feature.title === "Multi-Model AI Integration";
+            const isStrategicAlignmentFeature = feature.title === "Strategic AI Alignment";
             
             return (
               <motion.div
@@ -70,7 +72,14 @@ export default function FeaturesSection() {
                 data-testid={`feature-card-${index}`}
               >
                 <div className="mb-6">
-                  {isMultiModelFeature ? (
+                  {isStrategicAlignmentFeature ? (
+                    <img 
+                      src={starIcon} 
+                      alt="Strategic AI Alignment" 
+                      className="w-12 h-12 mb-4 brightness-0 invert"
+                      data-testid={`feature-icon-${index}`}
+                    />
+                  ) : isMultiModelFeature ? (
                     <img 
                       src={arrowsIcon} 
                       alt="Multi-Model AI Integration" 
