@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,39 +9,15 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-center"
+          className="flex flex-col md:flex-row justify-center items-center"
         >
-          <div className="mb-4 md:mb-0">
+          <div className="text-center">
             <h3 className="text-xl font-bold" data-testid="footer-logo">
               Agent Blueprint
             </h3>
             <p className="text-gray-400 mt-2" data-testid="footer-copyright">
               © 2025 Agent Blueprint. All rights reserved.
             </p>
-          </div>
-          
-          <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-              data-testid="footer-linkedin"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-              data-testid="footer-twitter"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors duration-300"
-              data-testid="footer-email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
           </div>
         </motion.div>
       </div>
