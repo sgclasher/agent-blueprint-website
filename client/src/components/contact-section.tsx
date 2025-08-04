@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Building, Mail, Rocket, Handshake } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -50,28 +50,7 @@ export default function ContactSection() {
     contactMutation.mutate(data);
   };
 
-  const contactInfo = [
-    {
-      icon: Building,
-      title: "NowGentic",
-      details: ["Boutique AI Advisory Firm", "Building the future of strategic AI implementation"]
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      details: ["contact@nowgentic.com", "info@agentblueprint.ai"]
-    },
-    {
-      icon: Rocket,
-      title: "Investment Opportunities",
-      details: ["Seeking VC funding to accelerate development", "investors@nowgentic.com"]
-    },
-    {
-      icon: Handshake,
-      title: "Partnerships",
-      details: ["Enterprise platform integrations welcome", "partnerships@nowgentic.com"]
-    }
-  ];
+
 
   return (
     <section id="contact" className="py-20 border-t border-gray-800">
@@ -92,16 +71,16 @@ export default function ContactSection() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h3 className="text-2xl font-semibold mb-6" data-testid="contact-form-title">
+              <h3 className="text-2xl font-semibold mb-6 text-center" data-testid="contact-form-title">
                 Send us a message
               </h3>
               
@@ -191,40 +170,6 @@ export default function ContactSection() {
                   </Button>
                 </form>
               </Form>
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <h3 className="text-2xl font-semibold mb-6" data-testid="contact-info-title">
-                Company Information
-              </h3>
-              
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon;
-                  return (
-                    <div key={info.title} className="flex items-start space-x-4" data-testid={`contact-info-${index}`}>
-                      <Icon className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold mb-2" data-testid={`contact-info-title-${index}`}>
-                          {info.title}
-                        </h4>
-                        {info.details.map((detail, detailIndex) => (
-                          <p key={detailIndex} className="text-gray-300" data-testid={`contact-info-detail-${index}-${detailIndex}`}>
-                            {detail}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
             </motion.div>
           </div>
         </div>
