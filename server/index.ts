@@ -1,18 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
-import path from "path";
 import { registerRoutes } from "./routes";
-// Temporary: bypass Vite integration due to module resolution issues
-// import { setupVite, serveStatic, log } from "./vite-temp";
-
-function log(message: string, source = "express") {
-  const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit", 
-    second: "2-digit",
-    hour12: true,
-  });
-  console.log(`${formattedTime} [${source}] ${message}`);
-}
+import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 app.use(express.json());
@@ -59,13 +47,14 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // Serve the built frontend from server/public directory
-  app.use(express.static("server/public"));
-  
-  // Fallback to index.html for SPA routing
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve("server/public/index.html"));
-  });
+  // importantly only setup vite in development and after
+  // setting up all the other routes so the catch-all route
+  // doesn't interfere with the other routes
+  if (app.get("env") === "development") {
+    await setupVite(app, server);
+  } else {
+    serveStatic(app);
+  }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
