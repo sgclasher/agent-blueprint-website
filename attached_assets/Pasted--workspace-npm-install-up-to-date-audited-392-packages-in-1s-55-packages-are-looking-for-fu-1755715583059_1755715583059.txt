@@ -1,0 +1,224 @@
+~/workspace$ npm install
+
+up to date, audited 392 packages in 1s
+
+55 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+~/workspace$ npm run dev
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+sh: 1: tsx: not found
+~/workspace$ ^C
+~/workspace$ npm i -D tsx
+
+up to date, audited 392 packages in 1s
+
+55 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+~/workspace$ npm run dev
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+sh: 1: tsx: not found
+~/workspace$ npm i tsx
+npm run dev
+
+up to date, audited 392 packages in 2s
+
+55 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+sh: 1: tsx: not found
+~/workspace$ NODE_ENV=development ./node_modules/.bin/tsx server/index.ts
+bash: ./node_modules/.bin/tsx: No such file or directory
+~/workspace$ # where am I / what versions?
+pwd
+node -v
+npm -v
+
+# where is npm putting things?
+npm prefix
+npm root
+npm bin
+
+# do we actually have tsx in the dep tree?
+npm ls tsx || echo "tsx not found in dep tree"
+
+# is the binary present?
+ls -l node_modules/.bin | grep -i tsx || echo "no tsx in .bin"
+
+# is tsx listed in package.json deps?
+grep -n '"tsx"' package.json || echo "tsx not listed in package.json"
+/home/runner/workspace
+v20.19.3
+10.8.2
+/home/runner/workspace
+/home/runner/workspace/node_modules
+Unknown command: "bin"
+
+To see a list of supported npm commands, run:
+  npm help
+rest-express@1.0.0 /home/runner/workspace
+└── (empty)
+
+tsx not found in dep tree
+no tsx in .bin
+101:    "tsx": "^4.20.4",
+~/workspace$ NODE_ENV=development npm exec -y tsx server/index.ts
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /home/runner/workspace/server/vite.ts
+    at packageResolve (node:internal/modules/esm/resolve:873:9)
+    at moduleResolve (node:internal/modules/esm/resolve:946:18)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at nextResolve (node:internal/modules/esm/hooks:864:28)
+    at resolveBase (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714602567:2:3811)
+    at resolveDirectory (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714602567:2:4310)
+    at resolveTsPaths (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714602567:2:5051)
+    at async resolve (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714602567:2:5422)
+    at async nextResolve (node:internal/modules/esm/hooks:864:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:306:24) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v20.19.3
+~/workspace$ npm i -D vite
+NODE_ENV=development npm exec -y tsx server/index.ts
+# or if you set the script:
+npm run dev
+
+up to date, audited 392 packages in 3s
+
+55 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /home/runner/workspace/server/vite.ts
+    at packageResolve (node:internal/modules/esm/resolve:873:9)
+    at moduleResolve (node:internal/modules/esm/resolve:946:18)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at nextResolve (node:internal/modules/esm/hooks:864:28)
+    at resolveBase (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714670452:2:3811)
+    at resolveDirectory (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714670452:2:4310)
+    at resolveTsPaths (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714670452:2:5051)
+    at async resolve (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755714670452:2:5422)
+    at async nextResolve (node:internal/modules/esm/hooks:864:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:306:24) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v20.19.3
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+sh: 1: tsx: not found
+~/workspace$ npm pkg set scripts.dev="NODE_ENV=development npm exec -y tsx server/index.ts"
+npm run dev
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development npm exec -y tsx server/index.ts
+
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /home/runner/workspace/server/vite.ts
+    at packageResolve (node:internal/modules/esm/resolve:873:9)
+    at moduleResolve (node:internal/modules/esm/resolve:946:18)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at nextResolve (node:internal/modules/esm/hooks:864:28)
+    at resolveBase (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715043696:2:3811)
+    at resolveDirectory (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715043696:2:4310)
+    at resolveTsPaths (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715043696:2:5051)
+    at async resolve (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715043696:2:5422)
+    at async nextResolve (node:internal/modules/esm/hooks:864:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:306:24) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v20.19.3
+~/workspace$ # 1) Verify whether you’re in a workspace root
+npm pkg get workspaces
+
+# 2) Make sure vite is listed under *this* package’s devDependencies
+npm pkg set "devDependencies.vite=^5.4.0"
+
+# 3) Reinstall cleanly so node_modules matches package.json
+rm -rf node_modules package-lock.json
+npm install
+
+# 4) Sanity-check it’s there
+npm ls vite || echo "vite still missing"
+test -d node_modules/vite && echo "vite folder exists" || echo "no vite folder"
+
+# 5) Try dev again (now using npm exec inside the script)
+npm run dev
+{}
+
+added 391 packages, and audited 392 packages in 50s
+
+55 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+rest-express@1.0.0 /home/runner/workspace
+└── (empty)
+
+vite still missing
+no vite folder
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development npm exec -y tsx server/index.ts
+
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'vite' imported from /home/runner/workspace/server/vite.ts
+    at packageResolve (node:internal/modules/esm/resolve:873:9)
+    at moduleResolve (node:internal/modules/esm/resolve:946:18)
+    at defaultResolve (node:internal/modules/esm/resolve:1188:11)
+    at nextResolve (node:internal/modules/esm/hooks:864:28)
+    at resolveBase (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715111198:2:3811)
+    at resolveDirectory (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715111198:2:4310)
+    at resolveTsPaths (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715111198:2:5051)
+    at async resolve (file:///home/runner/.npm/_npx/fd45a72a545557e9/node_modules/tsx/dist/esm/index.mjs?1755715111198:2:5422)
+    at async nextResolve (node:internal/modules/esm/hooks:864:22)
+    at async Hooks.resolve (node:internal/modules/esm/hooks:306:24) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v20.19.3
+~/workspace$ # Show current config/env
+npm config get production
+npm config get omit
+env | grep -i npm_ || true
+
+# Disable prod + omit for this project
+npm config set production false
+npm config delete omit
+null
+dev
+npm_config_prefix=/home/runner/workspace/.config/npm/node_global
+npm error The `production` option is deprecated, and can not be set in this wayUse `--omit=dev` instead.
+npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-08-20T18_45_18_877Z-debug-0.log
+~/workspace$ 
